@@ -10,35 +10,27 @@ public class LongestCommonPrefixSolution {
     }
 
     public String longestCommonPrefix(String[] strs) {
-
-        int cn=0;
-        StringBuilder sb = new StringBuilder();
+        int cont=0;
+        char[] charArray = new char[200];
+        String result;
 
         for (int i = 1; i < strs.length; i++) {
-           int len=strs[i].length();
 
-            for (int j = 0; j < len; j++) {
+            for (int j = 0; j < strs[1].length(); j++) {
+
                 if(strs[i].charAt(j) == strs[i-1].charAt(j)) {
-                    sb.append(strs[i].charAt(j));// flofl
-                    if(i<=strs.length){
-                        cn++;
-                    }
+
+                    charArray[j] = strs[i].charAt(j);
+                    cont++;
+
+                }else{
+                    charArray[j] = ' ';
                 }
             }
-
-
-
-        }
-        if(cn==0){
-            return "";
-        }else{
-
-            return String.valueOf(sb);
         }
 
-
-
-
+        result = new String(charArray);
+        return result;
 
     }
 
